@@ -2,6 +2,7 @@
 Documentation  Tests de créations de sorties
 Library        Selenium2Library
 Library        String
+Library        Collections
 Resource       ../../Prerequis.robot
 
 *** Variables ***
@@ -9,6 +10,7 @@ ${Nom_Utilisateur}
 ${Prenom_Utilisateur}
 ${Comparaison}
 ${Truc}
+${Rien}
 
 *** Keywords ***
 
@@ -47,12 +49,11 @@ Modifier profil prénom
     Should Be Equal As Strings  ${PRENOM}  ${Truc}
 
 Modifier profil prénom vide
-    ${RIEN}
     Connecter situlearnEditor
     click element  xpath://img[contains(@class,"avatar-icon rounded d-inline")]
     click element  xpath://div[contains(text(),"Mon compte")]
     click element  xpath://i[contains(@class,"fas fa-1x fa-edit")]
-    Input Text  xpath://div[2]/span/input  ${RIEN}
+    Input Text  xpath://div[2]/span/input    ${Rien}
     click button   xpath://button[contains(text(),"Valider")]
     Wait Until Page Does Not Contain Element  xpath://button[contains(text(),"Valider")]
     Redirection page d'acceuil
@@ -63,7 +64,7 @@ Modifier profil prénom vide
     ${Comparaison}  Split String  ${Prenom_Utilisateur}
     ${Truc}  Get From List  ${Comparaison}  0
     log to Console  ${Truc}
-    Should Not Be Equal As Strings  ${RIEN}  ${Truc}
+    Should Not Be Equal As Strings  ${Rien}  ${Truc}
 
 Modifier profil nom
     [Arguments]  ${NOM}

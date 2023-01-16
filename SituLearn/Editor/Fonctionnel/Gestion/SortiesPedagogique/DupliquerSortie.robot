@@ -3,6 +3,8 @@ Documentation  Tests de créations de sorties
 Library        Selenium2Library
 Library        Collections
 Resource       ../../../Prerequis.robot
+Resource       CreerSortie.robot
+Resource    ../../../../Library/FonctionPerso.robot
 
 *** Variables ***
 ${NOM_SORTIE}   balade
@@ -41,12 +43,3 @@ Dupliquer Sortie
 #    Redirection page d'acceuil
 #    sleep  1
 #    Supprimer activite  balade interactive
-
-#Renvoi les enfants d'un élément
-Get Child Webelements
-    [Arguments]    ${locator}
-
-    ${element}  Get WebElement  ${locator}
-    ${children}  Call Method  ${element}  find_elements  by=xpath  value=child::*
-
-    [Return]  ${children}

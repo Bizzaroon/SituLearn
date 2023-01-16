@@ -3,6 +3,7 @@ Documentation  Tests de créations de sorties
 Library        Selenium2Library
 Library        Collections
 Resource       ../../../Prerequis.robot
+Resource       CreerSortie.robot
 
 *** Variables ***
 ${Latitude}

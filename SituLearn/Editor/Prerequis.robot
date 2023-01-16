@@ -2,10 +2,12 @@
 Documentation  Tests de créations de sorties
 Library        Selenium2Library
 Resource       ./Fonctionnel/Gestion/CompteUtilisateur.robot
+Resource       ../Library/FonctionPerso.robot
 
 *** Variables ***
 ${PAGE}     https://situlearn-editor.univ-lemans.fr/login
 ${BROWSER}  Firefox
+${cpt}  0
 
 *** Keywords ***
 Connecter situlearnEditor
