@@ -6,7 +6,7 @@ Resource       ../Library/FonctionPerso.robot
 
 *** Variables ***
 ${PAGE}     https://situlearn-editor.univ-lemans.fr/login
-${BROWSER}  Firefox
+${BROWSER}  Chrome
 ${cpt}  0
 
 *** Keywords ***
