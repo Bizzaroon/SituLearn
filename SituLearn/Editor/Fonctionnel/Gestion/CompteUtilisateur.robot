@@ -55,16 +55,8 @@ Modifier profil prénom vide
     click element  xpath://i[contains(@class,"fas fa-1x fa-edit")]
     Input Text  xpath://div[2]/span/input    ${Rien}
     click button   xpath://button[contains(text(),"Valider")]
-    Wait Until Page Does Not Contain Element  xpath://button[contains(text(),"Valider")]
-    Redirection page d'acceuil
-    click element  xpath://img[contains(@class,"avatar-icon rounded d-inline")]
-    Sleep  1
-    ${Prenom_Utilisateur}  getText  xpath://html/body/div[1]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div/div/div[1]/div/div[2]/div/div/div[2]/div[1]
-    log to Console  ${Prenom_Utilisateur}
-    ${Comparaison}  Split String  ${Prenom_Utilisateur}
-    ${Truc}  Get From List  ${Comparaison}  0
-    log to Console  ${Truc}
-    Should Not Be Equal As Strings  ${Rien}  ${Truc}
+    sleep  1
+    Page Should Contain    xpath://html/body/div[1]/div/div[2]/div[3]/div[1]/div[2]/div/div[1]/div/div[2]/div[1]
 
 Modifier profil nom
     [Arguments]  ${NOM}

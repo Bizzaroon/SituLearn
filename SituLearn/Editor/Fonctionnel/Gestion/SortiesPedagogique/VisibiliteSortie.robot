@@ -30,3 +30,14 @@ Publier une sortie Pédagogique Complète
     sleep  5
 
     click button  xpath://div[contains(text(),"Non publiée")]
+
+Masquer une sortie pedagogique
+    Creer chasse au trésor valide
+
+    Wait until Page Contains Element  xpath://button[1]/i[contains(@class,"fas fa-eye")]  5
+    Click Element  xpath://button[1]/i[contains(@class,"fas fa-eye")]
+
+Rendre visible une sortie pedagogique
+    Masquer une sortie pedagogique
+    Wait until Page Contains Element  xpath://button[1]/i[contains(@class,"fas fa-eye-slash")]  5
+    Click Element  xpath://button[1]/i[contains(@class,"fas fa-eye-slash")]

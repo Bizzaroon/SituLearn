@@ -4,6 +4,7 @@ Library        Selenium2Library
 Library        Collections
 Resource       ../../../Prerequis.robot
 Resource    ../../../../Library/FonctionPerso.robot
+Resource    CreerSortie.robot
 
 *** Variables ***
 ${SORTIE}
@@ -35,3 +36,4 @@ Tester Sortie
         ${cpt}  Evaluate  ${cpt}+1
     END
     sleep  2
+

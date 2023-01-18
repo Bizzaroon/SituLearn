@@ -15,6 +15,9 @@ Connecter situlearnEditor
 
 Redirection page d'acceuil
     Click Element  xpath://html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/div[1]/div/li/a/i
+    sleep  1
+    Click Element  xpath://html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/div[1]/div/li/a/i
+    sleep  1
     Wait until Page Contains Element  xpath://th[contains(text(),"Nom de la sortie")]  20
     sleep  2
 
