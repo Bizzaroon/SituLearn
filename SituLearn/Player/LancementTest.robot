@@ -24,4 +24,4 @@ User Test
     Logout Test
     Good Login Test  ${email}    ${pwd}
     Delete Test
-    #Check Delete Test   ${email}    ${pwd}
+    #Check Delete Test   ${email}    ${pwd} 
