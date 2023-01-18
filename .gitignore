@@ -9,6 +9,8 @@ temp/
 */.virtual_documents/*
 .vscode
 .DS_Store
+*.log
+*.png
 *.pyc
 *.zip
 */work-items-out/*

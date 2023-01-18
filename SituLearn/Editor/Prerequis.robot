@@ -43,3 +43,22 @@ Supprimer activite
     END
     sleep  2
 
+Supprimer toutes les activites
+    Redirection page d'acceuil
+    
+    ${isPresent} =  Run Keyword And Return Status    Element Should Be Visible    xpath://button[@class='show-more btn btn-primary ']
+    WHILE    ${isPresent}
+        Click Button    xpath://button[@class='show-more btn btn-primary ']
+        Sleep    2s
+        ${isPresent} =  Run Keyword And Return Status    Element Should Be Visible    xpath://button[@class='show-more btn btn-primary ']
+    END
+
+    ${isPresent} =    Run Keyword And Return Status    Element Should Be Visible    xpath://tr[1]/td[7]/div/div[5]/button/i[contains(@class,"fas fa-trash")]
+    WHILE    ${isPresent}
+        Click Element  xpath://tr[1]/td[7]/div/div[5]/button/i[contains(@class,"fas fa-trash")]
+        Sleep  1s
+        Click Button   xpath://button[contains(text(),"Oui")]
+        Sleep  1s
+        ${isPresent} =    Run Keyword And Return Status    Element Should Be Visible    xpath://tr[1]/td[7]/div/div[5]/button/i[contains(@class,"fas fa-trash")]
+    END
+    sleep  2
