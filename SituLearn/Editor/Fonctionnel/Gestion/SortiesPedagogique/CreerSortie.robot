@@ -3,10 +3,6 @@ Documentation  Tests de créations de sorties
 Library        Selenium2Library
 Resource       ../../../Prerequis.robot
 
-*** Variables ***
-${DONNEE}  [{"Nom de la sortie" : "balade", "Description" : "Une balade interactive", "Domaine pédagogique" : "Autre", "Type" : "Balade interactive"}]
-
-
 *** Keywords ***
 Creer balade interactive valide
     Connecter situlearnEditor

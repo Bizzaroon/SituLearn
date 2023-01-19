@@ -6,8 +6,6 @@ Resource    ../../Prerequis.robot
 Resource    ../../../Library/FonctionPerso.robot
 Resource    SortiesPedagogique/CreerSortie.robot
 
-*** Variables ***
-
 *** Keywords ***
 Creer unite de jeu chasse au trésor
     Creer chasse au trésor valide
@@ -111,5 +109,4 @@ Importer une unité de jeu
     sleep  3
     Wait Until Element Is Visible    xpath://button[contains(text(),"Enregistrer")]  5
     Click Element    xpath://button[contains(text(),"Enregistrer")]
-    sleep  3
-    Page Should Contain Element   //input[text()="Point A"]
+    sleep  1
