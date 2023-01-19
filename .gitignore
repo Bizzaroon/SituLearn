@@ -22,3 +22,5 @@ output.xml
 report.html
 SituLearn/Editor/LancementTest.robot
 SituLearn/Player/LancementTest.robot
+*.html
+*.xml
