@@ -6,7 +6,7 @@ Resource       ../Library/FonctionPerso.robot
 
 *** Variables ***
 ${PAGE}     https://situlearn-editor.univ-lemans.fr/login
-${BROWSER}  Chrome
+${BROWSER}  Firefox
 ${cpt}  0
 
 *** Keywords ***
@@ -52,16 +52,16 @@ Supprimer toutes les activites
     ${isPresent} =  Run Keyword And Return Status    Element Should Be Visible    xpath://button[@class='show-more btn btn-primary ']
     WHILE    ${isPresent}
         Click Button    xpath://button[@class='show-more btn btn-primary ']
-        Sleep    2s
+        Sleep    1s
         ${isPresent} =  Run Keyword And Return Status    Element Should Be Visible    xpath://button[@class='show-more btn btn-primary ']
     END
 
     ${isPresent} =    Run Keyword And Return Status    Element Should Be Visible    xpath://tr[1]/td[7]/div/div[5]/button/i[contains(@class,"fas fa-trash")]
     WHILE    ${isPresent}
         Click Element  xpath://tr[1]/td[7]/div/div[5]/button/i[contains(@class,"fas fa-trash")]
-        Sleep  1s
+        Wait Until Element Is Visible    xpath://button[contains(text(),"Oui")]
         Click Button   xpath://button[contains(text(),"Oui")]
-        Sleep  1s
+        Sleep    1s
         ${isPresent} =    Run Keyword And Return Status    Element Should Be Visible    xpath://tr[1]/td[7]/div/div[5]/button/i[contains(@class,"fas fa-trash")]
     END
     sleep  2
