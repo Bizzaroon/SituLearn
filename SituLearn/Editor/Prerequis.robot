@@ -45,7 +45,8 @@ Supprimer activite
         ${cpt}  Evaluate  ${cpt}+1
     END
     sleep  2
-
+    
+END
 Supprimer toutes les activites
     Redirection page d'acceuil
     

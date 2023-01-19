@@ -17,7 +17,6 @@ ${Rien}
 Connection situlearnEditor
     [Arguments]  ${MAIL}  ${MDP}
     Open Browser    ${PAGE}   ${BROWSER}
-    Maximize Browser Window
     Wait until Page Contains Element  xpath://div[contains(text(),"Veuillez vous connecter")]  35
     Input Text    name:email     ${MAIL}
     Input Text    name:password  ${MDP}
@@ -51,6 +50,7 @@ Modifier profil prénom
 
 Modifier profil prénom vide
     Connecter situlearnEditor
+
     click element  xpath://img[contains(@class,"avatar-icon rounded d-inline")]
     click element  xpath://div[contains(text(),"Mon compte")]
     click element  xpath://i[contains(@class,"fas fa-1x fa-edit")]
