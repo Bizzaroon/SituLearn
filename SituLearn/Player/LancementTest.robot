@@ -1,7 +1,8 @@
 *** Settings ***
 Resource         Prerequis.robot
 Resource         Fonctionnel/Gestion/CompteUtilisateur.robot
-Test Teardown     Close Application
+Resource         Fonctionnel/Gestion/Notification.robot
+Test Teardown    Close Application
 
 *** Test Cases ***
 User Test
@@ -9,11 +10,11 @@ User Test
     ${pwd}  Set Variable     SituLearn
     Open SituLearnPlayer
     Bad Login 1 User
-    Reload Page
+    Prerequis.Reload Page
     Bad Login 2 User    ${email}
-    Reload Page
+    Prerequis.Reload Page
     Bad Login 3 User    ${pwd}
-    Reload Page
+    Prerequis.Reload Page
     Good Login User  ${email}    ${pwd}
     Visualize User  ${email}
     Modify User
@@ -21,3 +22,6 @@ User Test
     Good Login User  ${email}    ${pwd}
     Delete User
     Check Delete User   ${email}    ${pwd} 
+
+Notifier Test
+    Notifier une Proximité d’un POI Valide
