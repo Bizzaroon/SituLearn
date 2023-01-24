@@ -9,24 +9,24 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 
-Tout Supprimer
+Supprimer toutes les sorties
     Connecter situlearnEditor
     Supprimer toutes les activites
 
-Filtres
+Filtre Autre
     Filtre Domaine Pedagogique Autre
 
+Filtre Decouverte
     Filtre Domaine Pedagogique Decouverte
 
+Filtre Education physique et sportive
     Filtre Domaine Pedagogique Education physique et sportive
 
+Filtre Geographie
     Filtre Domaine Pedagogique Geographie
 
+Filtre Histoire
     Filtre Domaine Pedagogique Histoire
-
-    Filtre Domaine Pedagogique Musee
-
-    Filtre Domaine Pedagogique SVT
 
 Importer unite de jeu
     Importer une unité de jeu

@@ -14,31 +14,24 @@ ${test}
 *** Keywords ***
 Filtre Domaine Pedagogique Autre
     Filtre Domaine Pedagogique    Autre    Découverte
-    Close Browser
 
 Filtre Domaine Pedagogique Decouverte
     Filtre Domaine Pedagogique    Découverte    Autre
-    Close Browser
 
 Filtre Domaine Pedagogique Education physique et sportive
-    Filtre Domaine Pedagogique    Education Physique et Sportive    Découverte   
-    Close Browser
+    Filtre Domaine Pedagogique    Education Physique et Sportive    Découverte  
 
 Filtre Domaine Pedagogique Geographie
     Filtre Domaine Pedagogique    Géographie    Education Physique et Sportive
-    Close Browser
 
 Filtre Domaine Pedagogique Histoire
     Filtre Domaine Pedagogique    Histoire    Géographie
-    Close Browser
 
 Filtre Domaine Pedagogique Musee
     Filtre Domaine Pedagogique    Musée    Histoire
-    Close Browser
 
 Filtre Domaine Pedagogique SVT
     Filtre Domaine Pedagogique    SVT    Musée
-    Close Browser
 
 Filtre Domaine Pedagogique
     [Arguments]    ${theme}    ${themeTemoin}

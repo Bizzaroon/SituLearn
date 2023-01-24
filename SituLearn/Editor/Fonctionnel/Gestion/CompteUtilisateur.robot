@@ -17,6 +17,7 @@ ${Rien}
 Connection situlearnEditor
     [Arguments]  ${MAIL}  ${MDP}
     Open Browser    ${PAGE}   ${BROWSER}
+    Maximize Browser Window
     Wait until Page Contains Element  xpath://div[contains(text(),"Veuillez vous connecter")]  35
     Input Text    name:email     ${MAIL}
     Input Text    name:password  ${MDP}
