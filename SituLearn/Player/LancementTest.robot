@@ -1,10 +1,6 @@
 *** Settings ***
 Resource         Prerequis.robot
-Resource         Fonctionnel/Gestion/CompteUtilisateur/connexion.robot
-Resource         Fonctionnel/Gestion/CompteUtilisateur/visualize.robot
-Resource         Fonctionnel/Gestion/CompteUtilisateur/modify.robot
-Resource         Fonctionnel/Gestion/CompteUtilisateur/deconnexion.robot
-Resource         Fonctionnel/Gestion/CompteUtilisateur/delete.robot
+Resource         Fonctionnel/Gestion/CompteUtilisateur.robot
 Test Teardown     Close Application
 
 *** Test Cases ***
@@ -12,16 +8,16 @@ User Test
     ${email}    Set Variable   SitulearnTestPlayer@gmail.com
     ${pwd}  Set Variable     SituLearn
     Open SituLearnPlayer
-    Bad Login 1 Test
+    Bad Login 1 User
     Reload Page
-    Bad Login 2 Test    ${email}
+    Bad Login 2 User    ${email}
     Reload Page
-    Bad Login 3 Test    ${pwd}
+    Bad Login 3 User    ${pwd}
     Reload Page
-    Good Login Test  ${email}    ${pwd}
-    Visualize Test  ${email}
-    Modify Test
-    Logout Test
-    Good Login Test  ${email}    ${pwd}
-    Delete Test
-    #Check Delete Test   ${email}    ${pwd} 
+    Good Login User  ${email}    ${pwd}
+    Visualize User  ${email}
+    Modify User
+    Logout User
+    Good Login User  ${email}    ${pwd}
+    Delete User
+    Check Delete User   ${email}    ${pwd} 
