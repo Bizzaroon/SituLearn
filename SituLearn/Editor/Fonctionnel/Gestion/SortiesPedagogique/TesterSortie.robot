@@ -12,7 +12,7 @@ ${cpt}  0
 
 *** Keywords ***
 Tester Sortie
-    [Arguments]  ${nomSortie}
+    Creer hub d'activité valide
     Redirection page d'acceuil
     @{lstElement}  Get Child Webelements  xpath://tbody[contains(@style,"overflow-anchor: none;")]
 
@@ -24,7 +24,7 @@ Tester Sortie
             ${ElementEnfant}  Get From List  ${ListeEnfants}  0
             ${TextEnfant}  Get Text  ${ElementEnfant}
 
-            IF  "${TextEnfant}" == "${nomSortie}"
+            IF  "${TextEnfant}" == Hub d'activité
                 log to console   ${TextEnfant}
                 click Element  xpath://tr[${cpt}]/td[7]/div/div[5]/button/i[contains(@class,"fas fa-play")]
                 sleep  1

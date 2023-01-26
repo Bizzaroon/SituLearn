@@ -115,7 +115,6 @@ Modifier chasse au trésor valide
     END
 
 Supprimer une sortie
-    [Arguments]  ${nomSortie}
     ${cpt}  Evaluate  0
     Creer hub d'activité valide
     Redirection page d'acceuil
@@ -129,7 +128,7 @@ Supprimer une sortie
             ${ElementEnfant}  Get From List  ${ListeEnfants}  0
             ${TextEnfant}  Get Text  ${ElementEnfant}
 
-            IF  "${TextEnfant}" == "${nomSortie}"
+            IF  "${TextEnfant}" == Hub d'activité
                 log to console   ${TextEnfant}
                 click Element  xpath://tr[${cpt}]/td[7]/div/div[5]/button/i[contains(@class,"fas fa-trash")]
                 sleep  1
