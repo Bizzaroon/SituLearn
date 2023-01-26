@@ -5,7 +5,7 @@ Library     AppiumLibrary
 
 Notifier une Proximité d’un POI valide
 
-    # Mise des corrdonner du GPS loin du POI
+    # Mise des coordonnées du GPS loin du POI
     AppiumLibrary.Set Location    48.072253  -0.795729
 
     # Rechercher la sortie par son nom.
@@ -29,7 +29,7 @@ Notifier une Proximité d’un POI valide
     # Entrer dans la zone d'activation
     AppiumLibrary.Set Location    48.086498  -0.759533
 
-    # Verfifier que la sortie est bien fini
+    # Verifier que la sortie est bien fini
     AppiumLibrary.Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]
 
 
