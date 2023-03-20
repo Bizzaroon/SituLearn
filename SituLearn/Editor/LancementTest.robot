@@ -1,12 +1,14 @@
+#Dans ce fichier tous les tests seront exéctuer
+
 *** Settings ***
-Library          Selenium2Library
-Resource         Fonctionnel/Gestion/SortiesPedagogique/CreerSortie.robot
-Resource         Fonctionnel/Gestion/SortiesPedagogique/DupliquerSortie.robot
-Resource         Fonctionnel/Gestion/CompteUtilisateur.robot
-Resource         Fonctionnel/Gestion/UnitesDeJeu.robot
-Resource         Fonctionnel/Gestion/Filtres/FiltresDomainePedagogique.robot
-Resource         Fonctionnel/Gestion/SortiesPedagogique/ModifierSortiePedagogique.robot
-Resource         Fonctionnel/Gestion/SortiesPedagogique/TesterSortie.robot
+Library     Selenium2Library
+Resource    Fonctionnel/Gestion/SortiesPedagogique/CreerSortie.robot
+Resource    Fonctionnel/Gestion/SortiesPedagogique/DupliquerSortie.robot
+Resource    Fonctionnel/Gestion/CompteUtilisateur.robot
+Resource    Fonctionnel/Gestion/UnitesDeJeu.robot
+Resource    Fonctionnel/Gestion/Filtres/FiltresDomainePedagogique.robot
+Resource    Fonctionnel/Gestion/SortiesPedagogique/ModifierSortiePedagogique.robot
+Resource    Fonctionnel/Gestion/SortiesPedagogique/TesterSortie.robot
 Resource    Fonctionnel/Gestion/SortiesPedagogique/VisibiliteSortie.robot
 Resource    Fonctionnel/Gestion/SortiesPedagogique/VisualiserSortie.robot
 Test Teardown    Close Browser

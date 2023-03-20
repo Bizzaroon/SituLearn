@@ -1,21 +1,17 @@
+#Test sur la modification de sortie déjà créer
+
 *** Settings ***
 Documentation  Tests de créations de sorties
 Library        Selenium2Library
 Library        Collections
 Resource       ../../../Prerequis.robot
 Resource       CreerSortie.robot
-Resource    ../../../../Library/FonctionPerso.robot
-
-*** Variables ***
-${NOM_SORTIE}   balade
-${Element}
-${ListeEnfants}
-${Enfant}
-${TextEnfant}
-${cpt}  0
-${SORTIE}
+Resource       ../../../../Library/FonctionPerso.robot
+Resource       ../../../Variable.robot
 
 *** Keywords ***
+
+#Test de mettre le nom d'une sortie à vide
 Modifier nom sortie vide
     Creer balade interactive valide
     Redirection page d'acceuil
@@ -40,6 +36,7 @@ Modifier nom sortie vide
         ${cpt}  Evaluate  ${cpt}+1
     END
 
+#Test modifie une balade interactive
 Modifier balade interactive valide
     Creer balade interactive valide
     Redirection page d'acceuil
@@ -66,6 +63,7 @@ Modifier balade interactive valide
         ${cpt}  Evaluate  ${cpt}+1
     END
 
+#Test modifie hub d'activite
 Modifier hub d'activite valide
     ${cpt}  Evaluate  0
     Creer hub d'activité valide
@@ -90,6 +88,7 @@ Modifier hub d'activite valide
         ${cpt}  Evaluate  ${cpt}+1
     END
 
+#Test modifie chasse au trésor
 Modifier chasse au trésor valide
     ${cpt}  Evaluate  0
     Creer chasse au trésor valide
@@ -114,6 +113,7 @@ Modifier chasse au trésor valide
         ${cpt}  Evaluate  ${cpt}+1
     END
 
+#Test suprime une sortie
 Supprimer une sortie
     ${nomSortie}    Set Variable    Hub d'activité
     ${cpt}  Evaluate  0

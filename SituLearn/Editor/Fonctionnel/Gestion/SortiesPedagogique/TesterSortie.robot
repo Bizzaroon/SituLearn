@@ -1,14 +1,13 @@
+#Test des tests sorties par le créateur
+
 *** Settings ***
 Documentation  Tests de créations de sorties
 Library        Selenium2Library
 Library        Collections
+Resource       CreerSortie.robot
 Resource       ../../../Prerequis.robot
-Resource    ../../../../Library/FonctionPerso.robot
-Resource    CreerSortie.robot
-
-*** Variables ***
-${SORTIE}
-${cpt}  0
+Resource       ../../../Variable.robot
+Resource       ../../../../Library/FonctionPerso.robot
 
 *** Keywords ***
 Tester Sortie

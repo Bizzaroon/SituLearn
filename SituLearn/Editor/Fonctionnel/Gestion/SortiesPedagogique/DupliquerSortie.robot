@@ -1,23 +1,21 @@
+#Test sur la duplication des sortie
+
 *** Settings ***
 Documentation  Tests de créations de sorties
 Library        Selenium2Library
 Library        Collections
 Resource       ../../../Prerequis.robot
 Resource       CreerSortie.robot
-Resource    ../../../../Library/FonctionPerso.robot
-
-*** Variables ***
-${NOM_SORTIE}   balade
-${Element}
-${ListeEnfants}
-${Enfant}
-${TextEnfant}
-${cpt}  0
+Resource       ../../../../Library/FonctionPerso.robot
+Resource       ../../../Variable.robot
 
 *** Keywords ***
+
+#Duplique une sortie déjà existente
 Dupliquer Sortie
     Creer balade interactive valide
     Redirection page d'acceuil
+    #Récupère tous les éléments
     @{lstElement}  Get Child Webelements  xpath://tbody[contains(@style,"overflow-anchor: none;")]
 
     FOR  ${Element}  IN  @{lstElement}
@@ -40,6 +38,6 @@ Dupliquer Sortie
         END
         ${cpt}  Evaluate  ${cpt}+1
     END
-#    Redirection page d'acceuil
-#    sleep  1
-#    Supprimer activite  balade interactive
+    Redirection page d'acceuil
+    sleep  1
+    Supprimer activite  balade interactive

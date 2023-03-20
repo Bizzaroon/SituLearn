@@ -1,3 +1,6 @@
+#Test les différents scénario de création d'activité d'une sortie,
+#elle ne possedra pas d'activité
+
 *** Settings ***
 Documentation  Tests de créations de sorties
 Library        Selenium2Library

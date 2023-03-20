@@ -1,3 +1,5 @@
+#Test sur la visibilité des sorties par les créateurs
+
 *** Settings ***
 Documentation  Tests de créations de sorties
 Library        Selenium2Library
@@ -10,6 +12,8 @@ ${Latitude}
 ${Longitude}
 
 *** Keywords ***
+
+#Publie une sortie si celle ci est valide (un début, une activité et une fin)
 Publier une sortie Pédagogique Complète
     Creer chasse au trésor valide
     sleep  5
@@ -31,12 +35,14 @@ Publier une sortie Pédagogique Complète
 
     click button  xpath://div[contains(text(),"Non publiée")]
 
+#Masque une sortie visible
 Masquer une sortie pedagogique
     Creer chasse au trésor valide
 
     Wait until Page Contains Element  xpath://button[1]/i[contains(@class,"fas fa-eye")]  5
     Click Element  xpath://button[1]/i[contains(@class,"fas fa-eye")]
 
+#Rend visible une sortie qui ne l'est pas
 Rendre visible une sortie pedagogique
     Masquer une sortie pedagogique
     Wait until Page Contains Element  xpath://button[1]/i[contains(@class,"fas fa-eye-slash")]  5

@@ -1,3 +1,5 @@
+#Test pour visualiser une sortie
+
 *** Settings ***
 Documentation  Tests de créations de sorties
 Library     Selenium2Library

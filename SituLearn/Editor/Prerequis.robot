@@ -1,13 +1,11 @@
+#Regroupe les prérequis nécéssaire à faire avant les divers tests
+
 *** Settings ***
 Documentation  Tests de créations de sorties
 Library        Selenium2Library
 Resource       ./Fonctionnel/Gestion/CompteUtilisateur.robot
 Resource       ../Library/FonctionPerso.robot
-
-*** Variables ***
-${PAGE}     https://situlearn-editor.univ-lemans.fr/login
-${BROWSER}  Firefox
-${cpt}  0
+Resource       ./variable.robot
 
 *** Keywords ***
 Connecter situlearnEditor
@@ -21,19 +19,25 @@ Redirection page d'acceuil
     Wait until Page Contains Element  xpath://th[contains(text(),"Nom de la sortie")]  20
     sleep  2
 
+#Supprime une activité dont on passe le nom en paramètre
+#Arguments :
+#    nom de l'activité : activité qu'on veut supprimer
 Supprimer activite
     [Arguments]  ${nomActivite}
     Redirection page d'acceuil
+    #Récupère la liste les éléments
     @{lstElement}  Get Child Webelements  xpath://tbody[contains(@style,"overflow-anchor: none;")]
 
     FOR  ${Element}  IN  @{lstElement}
         ${ListeEnfants}  Get Child Webelements  ${Element}
         ${taille}  Get Length  ${ListeEnfants}
 
+        #C'est une activité
         IF  ${taille} > 0
             ${ElementEnfant}  Get From List  ${ListeEnfants}  0
             ${TextEnfant}  Get Text  ${ElementEnfant}
 
+            #Si c'est l'activité souhaité on supprime
             IF  "${TextEnfant}" == "${nomActivite}"
                 log to console   ${TextEnfant}
                 click Element  xpath://tr[${cpt}]/td[7]/div/div[5]/button/i[contains(@class,"fas fa-trash")]
@@ -47,6 +51,7 @@ Supprimer activite
     sleep  2
     
 END
+
 Supprimer toutes les activites
     Redirection page d'acceuil
     

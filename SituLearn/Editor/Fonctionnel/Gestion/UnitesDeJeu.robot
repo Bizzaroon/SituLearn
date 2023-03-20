@@ -1,3 +1,5 @@
+#Les différents tests sur les unités de jeu (ne prend pas en compte les activités)
+
 *** Settings ***
 Documentation  Tests de créations de sorties
 Library     Selenium2Library
@@ -88,11 +90,12 @@ Creer unite de jeu hub d'activite
     Input Text    xpath://section/div[1]/div/div/div/div/div/div[1]/div[3]/div[contains(@class,"e-content")]  Début de la sortie
     sleep  1
     Click Element    xpath://section/div[1]/div[contains(@class,"-editable-value-container")]  #On le refait une fois, en cliquant dessus le précédent champs s'était transformé et n'existe plus
-    sleep  3  #Laisse le temps au 1er champs de se retransformer comme il n'est plus sélectionné il reprend sa forme initial
+    sleep  3  #Laisse le temps au 1er champs de se retransformer, comme il n'est plus sélectionné il reprend sa forme initial
     Input Text    xpath://section/div[1]/div/div/div/div/div/div[1]/div[3]/div[contains(@class,"e-content")]  Fin de la sortie
     Click Button     xpath://button[contains(text(),"Enregistrer")]
     sleep  2
 
+#Importe une unité de jeu valide
 Importer une unité de jeu
     Creer unite de jeu chasse au trésor
     Redirection page d'acceuil
@@ -100,7 +103,6 @@ Importer une unité de jeu
     Click Element    xpath://i[contains(@class,"fas fa-upload")]
     Wait Until Element Is Visible    xpath://table/thead/tr[1]  20
     Click Element    xpath://table/thead/tr[2]/th[5]/span
-    #/html/body/div[4]/div/ul/li[9]
     Wait Until Element Is Visible    //li[text()="Luc Dupond"]  3
     Click Element    //li[text()="Luc Dupond"]
     Input Text    xpath://input    Point A
