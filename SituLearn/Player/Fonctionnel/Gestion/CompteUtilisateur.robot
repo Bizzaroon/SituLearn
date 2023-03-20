@@ -1,3 +1,5 @@
+# Dans ce fichier vous retrouverez tous les cas de test en rapport avec le Compte Utilisateur pour la partie Player
+
 *** Settings ***
 Library     AppiumLibrary
 
@@ -17,6 +19,9 @@ Bad Login 1 User
     AppiumLibrary.Wait Until Page Contains    Mot de passe requis     10
     AppiumLibrary.Wait Until Page Contains    Adresse email requise   10
 
+
+# Arguments 
+#     email: correspond à l'email que l'on veut entrer sur la page de connexion
 Bad Login 2 User
     [Arguments]     ${email}
     # Attendre l'ecran de chargement
@@ -37,6 +42,9 @@ Bad Login 2 User
     AppiumLibrary.Wait Until Page Contains   Veuillez corriger les erreurs suivantes     10
     AppiumLibrary.Wait Until Page Contains    Données invalides   10
 
+
+# Arguments 
+#     pwd: correspond au mot de passe que l'on veut entrer sur la page de connexion
 Bad Login 3 User
     [Arguments]     ${pwd}
     # Attendre l'ecran de chargement
@@ -57,6 +65,9 @@ Bad Login 3 User
     AppiumLibrary.Wait Until Page Contains   Veuillez corriger les erreurs suivantes     10
     AppiumLibrary.Wait Until Page Contains    Données invalides   10
 
+# Arguments 
+#     email: correspond à l'email que l'on veut entrer sur la page de connexion
+#     pwd: correspond au mot de passe que l'on veut entrer sur la page de connexion
 Good Login User
     [Arguments]     ${email}    ${pwd}
     # Attendre l'ecran de chargement
@@ -92,7 +103,7 @@ Logout User
     AppiumLibrary.Wait Until Element Is Visible    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.widget.ListView/android.view.View[6]   10
     AppiumLibrary.Click Element    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View[2]/android.widget.ListView/android.view.View[6]
 
-    # verifie que l'on arrive sur la page de connexion (verifie qu'il y a bien "Pas de compte ? Créez un compte")
+    # Verifie que l'on arrive sur la page de connexion (verifie qu'il y a bien "Pas de compte ? Créez un compte")
     AppiumLibrary.Wait Until Page Contains      Pas de compte ? Créez un compte  10
 
 ### Delete ###
@@ -119,8 +130,11 @@ Delete User
     AppiumLibrary.Wait Until Page Contains    Votre compte a bien été supprimé. Vous allez être déconnecté.   10
     Sleep   6s
 
-Check Delete User
 
+# Arguments 
+#     email: correspond à l'email que l'on veut entrer sur la page de connexion
+#     pwd: correspond au mot de passe que l'on veut entrer sur la page de connexion
+Check Delete User
     [Arguments]     ${email}    ${pwd}
     # Attendre l'ecran de chargement
     AppiumLibrary.Wait Until Element Is Visible   xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.widget.EditText    300     Chargement trop long, plus de 5 min.
@@ -174,6 +188,9 @@ Modify User
     AppiumLibrary.Wait Until Page Contains  ${newValue}  10
 
 ### Visualize ###
+
+# Arguments 
+#     email: correspond à l'email que l'on veut entrer sur la page de connexion
 Visualize User
     [Arguments]    ${email}
 

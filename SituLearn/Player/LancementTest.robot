@@ -2,11 +2,8 @@
 Resource         Prerequis.robot
 Resource         Fonctionnel/Gestion/CompteUtilisateur.robot
 Resource         Fonctionnel/Gestion/Notification.robot
+Resource         Fonctionnel/Variables.robot
 Test Teardown    Close Application
-
-*** Variables ***
-${email}    SitulearnTestPlayer@gmail.com
-${pwd}      SituLearn
 
 *** Test Cases ***
 
@@ -46,6 +43,6 @@ Test de Déconnexion
 #     Check Delete User   ${email}    ${pwd}
 
 
-Notifier une Proximité d’un POI
+Notifier une Proximité avec un POI
     Connecter SituLearn Player
     Notifier une Proximité d’un POI Valide

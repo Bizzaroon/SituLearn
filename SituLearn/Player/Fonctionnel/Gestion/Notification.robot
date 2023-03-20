@@ -1,3 +1,5 @@
+# Dans ce fichier vous retrouverez un cas de test en rapport avec le GPS
+
 *** Settings ***
 Library     AppiumLibrary
 

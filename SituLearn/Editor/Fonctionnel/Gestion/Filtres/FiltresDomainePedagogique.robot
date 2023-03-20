@@ -1,15 +1,12 @@
+# Dans ce fichier vous retrouverez tous les cas de test en rapport avec les recherches par filtre pédagogique dans le Editor
+
 *** Settings ***
 Documentation  Tests des filtres sur le domaine pédagogique
 Library        Selenium2Library
 Library        String
 Library        Collections
-Library    RPA.Dialogs
 Resource       ../../../Prerequis.robot
 Resource       ../SortiesPedagogique/CreerSortie.robot
-
-*** Variables ***
-${test}
-
 
 *** Keywords ***
 Filtre Domaine Pedagogique Autre
@@ -33,6 +30,9 @@ Filtre Domaine Pedagogique Musee
 Filtre Domaine Pedagogique SVT
     Filtre Domaine Pedagogique    SVT    Musée
 
+# Arguments 
+#     theme: correspond au thème que l'on recherche
+#     themeTemoin: correspond au thème qui verfifie qu'il n'est pas trouver, doit etre différent de theme 
 Filtre Domaine Pedagogique
     [Arguments]    ${theme}    ${themeTemoin}
 
@@ -58,6 +58,8 @@ Filtre Domaine Pedagogique
     # Verifier dans la liste des sorties qu'il n'y a que des sorties du theme que l'on filtre
     Verifie Theme    ${theme}
 
+# Arguments 
+#     theme: correspond au thème de la sortie qui sera créée
 Cree Balade Interactive Valide Et Modifier Theme
     [Arguments]    ${theme}
     # Créer une sortie de type autre.
@@ -77,6 +79,8 @@ Retoure au Menu
     Sleep    1s
     Element Text Should Be    xpath://div[1]/div/div[2]/div[3]/div[1]/div/div/div[1]/div[2]/h1    Gestion des sorties pédagogiques
 
+# Arguments 
+#     theme: correspond au thème que l'on veut vérifier et trouver sur la page des sorties
 Verifie Theme
     [Arguments]    ${theme}
 
