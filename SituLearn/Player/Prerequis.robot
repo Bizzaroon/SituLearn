@@ -16,17 +16,19 @@ ${appium:newCommandTimeout}    3600
 ${appium:connectHardwareKeyboard}    true
 
 *** Keywords ***
+
+#Mise en place, lance le serveur appium Appium
+Mise en Place
+    Windows Run    emulator ${emulator}
+    sleep  20s
+    Windows Run    Appium
+    Sleep  10s
+    
 Reload Page
     # Redirige vers l'URL mis
     AppiumLibrary.Click Element    accessibility_id=Load URL
 
 Open SituLearnPlayer
-    
-    #Lance le serveur appium Appium
-    Windows Run    emulator ${emulator}
-    sleep  20s
-    Windows Run    Appium
-    Sleep  10s
     #Ouvre la WebView
     Open Application    ${REMOTE_URL}   appium:deviceName=${appium:deviceName}  appium:platformName=${appium:platformName}  appium:platformVersion=${appium:platformVersion}  appium:appPackage=${appium:appPackage}  appium:appActivity=${appium:appActivity}  appium:newCommandTimeout=${appium:newCommandTimeout}  appium:connectHardwareKeyboard=${appium:connectHardwareKeyboard}
     Sleep   1s
