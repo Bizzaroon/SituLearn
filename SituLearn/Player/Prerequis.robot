@@ -1,7 +1,9 @@
 *** Settings ***
 Library     AppiumLibrary
+Library     RPA.Windows
 
-Resource         Fonctionnel/Gestion/CompteUtilisateur.robot
+Resource    Fonctionnel/Gestion/CompteUtilisateur.robot
+Resource    ./Fonctionnel/Variables.robot
 
 *** Variables ***
 ${REMOTE_URL}   http://localhost:4723/wd/hub
@@ -19,6 +21,12 @@ Reload Page
     AppiumLibrary.Click Element    accessibility_id=Load URL
 
 Open SituLearnPlayer
+    
+    #Lance le serveur appium Appium
+    Windows Run    emulator ${emulator}
+    sleep  1s
+    Windows Run    Appium
+    Sleep  1s
     #Ouvre la WebView
     Open Application    ${REMOTE_URL}   appium:deviceName=${appium:deviceName}  appium:platformName=${appium:platformName}  appium:platformVersion=${appium:platformVersion}  appium:appPackage=${appium:appPackage}  appium:appActivity=${appium:appActivity}  appium:newCommandTimeout=${appium:newCommandTimeout}  appium:connectHardwareKeyboard=${appium:connectHardwareKeyboard}
     Sleep   1s

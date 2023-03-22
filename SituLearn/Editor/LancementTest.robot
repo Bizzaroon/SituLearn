@@ -28,7 +28,7 @@ Créer une Unité De Jeu Valide pour hub d'activite
 Dupliquer une Sortie
     Dupliquer Sortie
 
-Modifier le Nom d'une Sortie
+Modifier le Nom d'une Sortie vide
     Modifier nom sortie vide
 
 Modifier une Balade Interactive 
