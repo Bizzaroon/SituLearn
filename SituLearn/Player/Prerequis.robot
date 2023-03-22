@@ -24,9 +24,9 @@ Open SituLearnPlayer
     
     #Lance le serveur appium Appium
     Windows Run    emulator ${emulator}
-    sleep  1s
+    sleep  20s
     Windows Run    Appium
-    Sleep  1s
+    Sleep  10s
     #Ouvre la WebView
     Open Application    ${REMOTE_URL}   appium:deviceName=${appium:deviceName}  appium:platformName=${appium:platformName}  appium:platformVersion=${appium:platformVersion}  appium:appPackage=${appium:appPackage}  appium:appActivity=${appium:appActivity}  appium:newCommandTimeout=${appium:newCommandTimeout}  appium:connectHardwareKeyboard=${appium:connectHardwareKeyboard}
     Sleep   1s
