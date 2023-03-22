@@ -7,6 +7,10 @@ Test Teardown    Close Application
 
 *** Test Cases ***
 
+#Prépare l'environnement de test
+Mise en Place
+    Mise en Place
+
 Test de Mauvaise Connexion 1
     Open SituLearnPlayer
     Bad Login 1 User
