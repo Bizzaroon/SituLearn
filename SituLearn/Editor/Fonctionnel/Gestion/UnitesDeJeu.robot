@@ -12,7 +12,7 @@ Resource    SortiesPedagogique/CreerSortie.robot
 Creer unite de jeu chasse au trésor
     Creer chasse au trésor valide
     sleep  2
-    click button  xpath://button[contains(text(),"Éditer carte / POI")]
+    click button  xpath://button[contains(text(),"Éditer la carte")]
     Wait Until Element Is Visible    //a[contains(@class,"fas fa-map-marker-plus add-marker")]  15
     click element  xpath://a[contains(@class,"fas fa-map-marker-plus add-marker")]
     click element  xpath://div[contains(@id,"fieldTripMap")]
@@ -41,7 +41,7 @@ Creer unite de jeu chasse au trésor
 Creer unite de jeu balade intérative
     Creer balade interactive valide
     sleep  2
-    click button  xpath://button[contains(text(),"Éditer carte / POI")]
+    click button  xpath://button[contains(text(),"Éditer la carte")]
     sleep  10
     click element  xpath://a[contains(@class,"fas fa-map-marker-plus add-marker")]
     click element  xpath://div[contains(@id,"fieldTripMap")]
@@ -70,7 +70,7 @@ Creer unite de jeu balade intérative
 Creer unite de jeu hub d'activite
     Creer hub d'activité valide
     sleep  2
-    click button  xpath://button[contains(text(),"Éditer carte / POI")]
+    click button  xpath://button[contains(text(),"Éditer la carte")]
     Wait Until Element Is Visible    xpath://a[contains(@class,"fas fa-map-marker-plus add-marker")]  10
     click element  xpath://a[contains(@class,"fas fa-map-marker-plus add-marker")]
     click element  xpath://div[contains(@id,"fieldTripMap")]

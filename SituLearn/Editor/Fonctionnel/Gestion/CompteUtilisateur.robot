@@ -14,8 +14,7 @@ Resource       ../../Variable.robot
 #    MDP  : mot de passe utilisé pour se connecter
 Connection situlearnEditor
     [Arguments]  ${MAIL}  ${MDP}
-    Open Browser    ${PAGE}   ${BROWSER}
-    Maximize Browser Window
+    Open Firefox
     Wait until Page Contains Element  xpath://div[contains(text(),"Veuillez vous connecter")]  35
     Input Text    name:email     ${MAIL}
     Input Text    name:password  ${MDP}

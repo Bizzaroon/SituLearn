@@ -1,5 +1,7 @@
 *** Settings ***
 Library        Selenium2Library
+Library        Collections
+Resource       ../Editor/variable.robot
 
 *** Keywords ***
 
@@ -10,3 +12,7 @@ Get Child Webelements
     ${children}  Call Method  ${element}  find_elements  by=xpath  value=child::*
 
     [Return]  ${children}
+
+Open Firefox
+    Open Browser    ${PAGE}        ${BROWSER} 
+    Maximize Browser Window
