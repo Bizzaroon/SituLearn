@@ -1,7 +1,9 @@
 *** Settings ***
 Library     AppiumLibrary
+Library     RPA.Windows
 
-Resource         Fonctionnel/Gestion/CompteUtilisateur.robot
+Resource    Fonctionnel/Gestion/CompteUtilisateur.robot
+Resource    ./Fonctionnel/Variables.robot
 
 *** Variables ***
 ${REMOTE_URL}   http://localhost:4723/wd/hub
@@ -14,6 +16,14 @@ ${appium:newCommandTimeout}    3600
 ${appium:connectHardwareKeyboard}    true
 
 *** Keywords ***
+
+#Mise en place, lance le serveur appium Appium
+Mise en Place
+    Windows Run    emulator ${emulator}
+    sleep  20s
+    Windows Run    Appium
+    Sleep  10s
+    
 Reload Page
     # Redirige vers l'URL mis
     AppiumLibrary.Click Element    accessibility_id=Load URL

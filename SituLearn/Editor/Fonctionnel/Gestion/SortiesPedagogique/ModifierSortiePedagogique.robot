@@ -29,7 +29,7 @@ Modifier nom sortie vide
                 click Element  xpath://tr[${cpt}]/td[7]/div/div[4]/button/i[contains(@class,"fas fa-edit")]
                 Clear Element Text    xpath://input[contains(@placeholder,"Nom de la sortie")]
                 click button  xpath://button[contains(text(),"Enregistrer")]
-                Wait until Page Contains Element  xpath://div[contains(@class, "alert alert-danger0")]  2  #Message d'erreur élément vide
+                Wait until Page Contains Element  xpath://div[contains(@class, "alert-heading")]  2  #Message d'erreur élément vide
                 BREAK
             END
         END
