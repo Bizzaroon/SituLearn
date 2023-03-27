@@ -21,8 +21,7 @@ Creer unite de jeu chasse au trésor
     ${Latitude}  Get Text  xpath://div[3]/div/div/input
     click button  xpath://button[contains(text(),"Valider")]
     sleep  5
-    click button  xpath://button[contains(text(),"Enregistrer la carte")]
-    click button  xpath://button[contains(text(),"Revenir à la sortie")]
+    click button  xpath://button[contains(text(),"Enregistrer et retourner à la sortie")]
     sleep  5
     Click Element    xpath://a[contains(text(),"chasse au trésor")]
     sleep  4
@@ -50,8 +49,7 @@ Creer unite de jeu balade intérative
     ${Latitude}  Get Text  xpath://div[3]/div/div/input
     click button  xpath://button[contains(text(),"Valider")]
     sleep  3
-    click button  xpath://button[contains(text(),"Enregistrer la carte")]
-    click button  xpath://button[contains(text(),"Revenir à la sortie")]
+    click button  xpath://button[contains(text(),"Enregistrer et retourner à la sortie")]
     sleep  3
     Click Element    xpath://a[contains(text(),"balade")]
     sleep  4
@@ -79,8 +77,7 @@ Creer unite de jeu hub d'activite
     ${Latitude}  Get Text  xpath://div[3]/div/div/input
     click button  xpath://button[contains(text(),"Valider")]
     sleep  3
-    click button  xpath://button[contains(text(),"Enregistrer la carte")]
-    click button  xpath://button[contains(text(),"Revenir à la sortie")]
+    click button  xpath://button[contains(text(),"Enregistrer et retourner à la sortie")]
     sleep  3
     Click Element    xpath://a[contains(text(),"Hub d'activité")]
     sleep  4
